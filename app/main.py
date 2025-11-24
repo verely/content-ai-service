@@ -67,3 +67,11 @@ async def http_exception_handler(request, exc):
             error=exc.detail, timestamp=datetime.now().isoformat()
         ).model_dump()(),
     )
+
+
+if __name__ == "__main__":
+    import uvicorn
+    import os
+
+    port = int(os.getenv("PORT", 8000))
+    uvicorn.run(app, host="127.0.0.0", port=port)
