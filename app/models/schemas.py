@@ -12,6 +12,7 @@ class CommentRequest(BaseModel):
     num_suggestions: int = Field(
         default=3, ge=1, le=5, description="Number of comment suggestions (1-5)"
     )
+    
 
 
 class CommentResponse(BaseModel):
